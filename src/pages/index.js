@@ -23,10 +23,13 @@ const chevronAnim = keyframes`
   }
 `;
 
+const HeaderContainer = styled(Container)`
+  border-top: solid 10px ${p => p.theme.color.primary};
+`;
+
 const Header = styled.header`
   display: grid;
-  border-top: solid 10px ${p => p.theme.color.primary};
-  height: 90vh;
+  height: 85vh;
   align-items: center;
   grid-template-rows: minmax(20px, 1fr) 200px minmax(240px, 1fr);
   justify-items: center;
@@ -50,16 +53,17 @@ const Logo = styled(LogoImg)`
 const Title = styled.h1`
   text-align: center;
   margin: 0;
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: normal;
+  margin-top: 0.5em;
+
+  ${media.greaterThan("medium")`
+    font-size: 4rem;
+  `}   
 `
 
 const IndexChevron = styled(Chevron)`
    animation: ${chevronAnim} 3s ease-in-out infinite;
-`;
-
-const GamesSection = styled(Container)`
-
 `;
 
 const Game = styled.div`
@@ -67,16 +71,12 @@ const Game = styled.div`
   min-height: 70vh;
   grid-row-gap: 20px;
   grid-column-gap: 20px;
-  margin: 40px 0;
   padding: 20px 0;
   grid: "title" max-content
         "img" max-content 
         "desc" min-content 
         "links" min-content /
         1fr;
-  background-size: cover;
-  background-image: url(${p => p.back});
-
   ${media.greaterThan("medium")`
     grid-row-gap: 0;
     grid: "title img" max-content 
@@ -119,22 +119,20 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Header>
-        <Logo />
-        <HeaderSub>
-          <Title>
-            Eldritch Pixels
+      <HeaderContainer>
+        <Header>
+          <Logo />
+          <HeaderSub>
+            <Title>
+              Eldritch Pixels
           </Title>
-          <IndexChevron size={50} direction="down" />
-        </HeaderSub>
-        {/* <div>
-          Welcome .. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div> */}
-
-      </Header>
+            <IndexChevron size={50} direction="down" />
+          </HeaderSub>
+        </Header>
+      </HeaderContainer>
       <main>
-        <GamesSection>
-          <Game back={tendrilBack}>
+        <Container back={tendrilBack}>
+          <Game>
             <GameImage>
               {/* <StaticImage src="../images/tendril1.jpg" alt="Tendril: Echo Received" layout="fullWidth" /> */}
             </GameImage>
@@ -147,8 +145,7 @@ You need to plan carefully because here, a single bullet kills.</GameDesc>
               <a href="http://tendrilechoreceived.com/" target="_blank" rel="noopener nofollow">Homepage</a> | <a href="https://www.facebook.com/TendrilEchoReceived" target="_blank" rel="noopener nofollow">Facebook</a> | <a href="https://forums.tigsource.com/index.php?topic=60709.0" target="_blank" rel="noopener nofollow">DevLog</a> | <a href="https://www.youtube.com/channel/UCHQoiV2IFzQjhJ7D670coHA" target="_blank" rel="noopener nofollow">Youtube</a>
             </GameLinks>
           </Game>
-        </GamesSection>
-
+        </Container>
       </main>
     </Layout>
   )

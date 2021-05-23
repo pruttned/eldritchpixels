@@ -1,18 +1,25 @@
 import React from "react"
-import styled, { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from '../theme/globalStyles';
-import { theme } from '../theme/theme';
+import styled, { css } from 'styled-components';
 
 const Root = styled.div`
+    ${p => p.back && css`
+        background: url(${p => p.back});
+        background-size: cover;
+    `}
+`;
+
+const Content = styled.div`
     margin: 0 auto;
     max-width: 1170px;
     padding: 0 1rem;
 `;
 
-export default function Container({ children }) {
+export default function Container({ children, back, className }) {
     return (
-        <Root >
-            {children}
+        <Root back={back} className={className}>
+            <Content>
+                {children}
+            </Content>
         </Root>
     )
 }
