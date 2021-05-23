@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "eldritchpixels",
+    title: "EldritchPixels",
   },
   plugins: [
     "gatsby-plugin-styled-components",
@@ -9,7 +9,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/svg/icon.svg",
       },
     },
     "gatsby-plugin-sharp",

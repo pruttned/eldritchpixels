@@ -7,6 +7,7 @@ import media from "styled-media-query";
 import LogoImg from "../svg/logo.svg";
 import tendrilBack from "../images/tendril-back.jpg";
 import Container from '../components/container'
+import { Helmet } from 'react-helmet'
 
 const chevronAnim = keyframes`
   0% {
@@ -116,6 +117,9 @@ const IndexPage = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Eldritch Pixels</title>
+      </Helmet>
       <HeaderContainer>
         <Header>
           <Logo />

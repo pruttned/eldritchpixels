@@ -4,6 +4,7 @@ import { GlobalStyle } from '../theme/globalStyles';
 import { theme } from '../theme/theme';
 import Container from './container';
 import Discord from "../svg/discord.svg";
+import { Helmet } from 'react-helmet';
 
 
 const Footer = styled.footer`
@@ -30,6 +31,9 @@ const Copy = styled.div`
 export default function Layout({ children }) {
     return (
         <ThemeProvider theme={theme}>
+            <Helmet>
+                <meta charSet="utf-8" />
+            </Helmet>
             {children}
             <Footer>
                 <Container>
