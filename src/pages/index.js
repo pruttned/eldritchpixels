@@ -58,6 +58,7 @@ const Title = styled.h1`
   margin-top: 0.5em;
 
   ${media.greaterThan("medium")`
+    margin-top: 0.3em;
     font-size: 4rem;
   `}   
 `
