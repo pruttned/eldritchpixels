@@ -138,11 +138,14 @@ const IndexPage = () => {
               <StaticImage src="../images/tendril.jpg" alt="Tendril: Echo Received" layout="fullWidth" />
             </GameImage>
             <GameTitle href="http://tendrilechoreceived.com/" target="_blank"><h3>Tendril: Echo Received</h3></GameTitle>
-            <GameDesc>2D stealth platformer inspired by Ridley Scott’s Alien with a focus on freedom of movement.
-            You play as a blood-thirsty demonic creature that hunts down everyone on its quest for revenge.
-            The main focus is to give you almost no restrictions on movement and let you figure out the best approach.
-            You need to plan carefully because here, a single bullet kills.
-            <GameLinks>
+            <GameDesc>
+              <p>2D stealth platformer inspired by Ridley Scott’s Alien with focus on freedom of movement.</p>
+              <p>
+                You play as a blood-thirsty demonic creature that hunts down everyone on its quest for revenge.
+                The main focus is to give you almost no movement restrictions and let you figure out the best approach.
+                You need to plan carefully because here, a single bullet kills.
+            </p>
+              <GameLinks>
                 <a href="http://tendrilechoreceived.com/" target="_blank">Homepage</a> | <a href="https://www.facebook.com/TendrilEchoReceived" target="_blank" rel="noopener nofollow">Facebook</a> | <a href="https://forums.tigsource.com/index.php?topic=60709.0" target="_blank" rel="noopener nofollow">DevLog</a> | <a href="https://www.youtube.com/channel/UCHQoiV2IFzQjhJ7D670coHA" target="_blank" rel="noopener nofollow">Youtube</a>
               </GameLinks>
             </GameDesc>
