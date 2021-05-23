@@ -68,20 +68,17 @@ const IndexChevron = styled(Chevron)`
 
 const Game = styled.div`
   display: grid;
-  min-height: 70vh;
   grid-row-gap: 20px;
   grid-column-gap: 20px;
-  padding: 20px 0;
+  padding: 60px 0;
   grid: "title" max-content
         "img" max-content 
-        "desc" min-content 
-        "links" min-content /
+        "desc" min-content /
         1fr;
   ${media.greaterThan("medium")`
     grid-row-gap: 0;
     grid: "title img" max-content 
-        "desc img" min-content 
-        "links links" min-content /
+        "desc img" min-content /
         1fr 1fr;
   `}        
 `;
@@ -91,10 +88,10 @@ const GameTitle = styled.a`
   text-align: center;
   z-index: 1;
   &,&:visited {
-      color: ${p => p.theme.color.primary};
+      color: ${p => p.theme.color.text};
   };
   &:hover,&:active {
-      color: ${p => p.theme.color.primary};
+      color: ${p => p.theme.color.text};
   };
   ${media.greaterThan("medium")`
     text-align: left;
@@ -105,13 +102,12 @@ const GameDesc = styled.div`
   z-index: 1;
 `;
 const GameImage = styled.div`
-  grid-column: title-start/img-end;
-  grid-row: title-start/img-end;
+  grid-area: img;
   overflow: hidden;
 `;
 const GameLinks = styled.div`
   padding: 20px 0 0 0;
-  text-align: center;
+  text-align: left;
   grid-area: links;
 `;
 
@@ -134,16 +130,17 @@ const IndexPage = () => {
         <Container back={tendrilBack}>
           <Game>
             <GameImage>
-              {/* <StaticImage src="../images/tendril1.jpg" alt="Tendril: Echo Received" layout="fullWidth" /> */}
+              <StaticImage src="../images/tendril.jpg" alt="Tendril: Echo Received" layout="fullWidth" />
             </GameImage>
             <GameTitle href="http://tendrilechoreceived.com/" target="_blank" rel="noopener nofollow"><h3>Tendril: Echo Received</h3></GameTitle>
             <GameDesc>2D stealth platformer inspired by Ridley Scott’s Alien with a focus on freedom of movement.
             You play as a blood-thirsty demonic creature that hunts down everyone on its quest for revenge.
             The main focus is to give you almost no restrictions on movement and let you figure out the best approach.
-You need to plan carefully because here, a single bullet kills.</GameDesc>
+            You need to plan carefully because here, a single bullet kills.
             <GameLinks>
-              <a href="http://tendrilechoreceived.com/" target="_blank" rel="noopener nofollow">Homepage</a> | <a href="https://www.facebook.com/TendrilEchoReceived" target="_blank" rel="noopener nofollow">Facebook</a> | <a href="https://forums.tigsource.com/index.php?topic=60709.0" target="_blank" rel="noopener nofollow">DevLog</a> | <a href="https://www.youtube.com/channel/UCHQoiV2IFzQjhJ7D670coHA" target="_blank" rel="noopener nofollow">Youtube</a>
-            </GameLinks>
+                <a href="http://tendrilechoreceived.com/" target="_blank" rel="noopener nofollow">Homepage</a> | <a href="https://www.facebook.com/TendrilEchoReceived" target="_blank" rel="noopener nofollow">Facebook</a> | <a href="https://forums.tigsource.com/index.php?topic=60709.0" target="_blank" rel="noopener nofollow">DevLog</a> | <a href="https://www.youtube.com/channel/UCHQoiV2IFzQjhJ7D670coHA" target="_blank" rel="noopener nofollow">Youtube</a>
+              </GameLinks>
+            </GameDesc>
           </Game>
         </Container>
       </main>
